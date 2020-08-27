@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "todo-list-jc-ae8bd": {
+      "hosting": {
+        "todo-list": [
+          "todo-list-jc-ae8bd"
+        ]
+      }
+    }
+  }
+}

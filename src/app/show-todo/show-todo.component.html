@@ -1,0 +1,34 @@
+<h1>Show Todos</h1>
+
+<div *ngFor="let data of data; let i = index ">
+    <ul>
+        <li>{{ data.id }}</li>
+        <li>{{ data.todoName }}</li>
+        <li>{{ data.todoDescription }}</li>
+        <li>{{ data.todoCategory }}</li>
+    </ul>
+    <button mat-raised-button color="primary" (click)="toggle()">Update Form</button>
+    <button mat-raised-button color="warn" (click)="delete(data.id)">Delete Todo</button>
+
+    <form [formGroup] = "updateForm" *ngIf="show && i == i">
+        <label for="todoName">Todo Name:</label>
+        <input type="text" formControlName = "todoName" id="todoName" [(ngModel)] = "todoNameDisplay">
+        <div *ngIf="todoName.invalid && (todoName.dirty || todoName.touched)" class="alert alert-danger">Todo Name is Required with at least 4 characters</div>
+    
+        <label for="todoDescription">Todo Description</label>
+        <input [(ngModel)] = "todoDescriptionDisplay" type="text" formControlName = "todoDescription" id="todoDescription">
+        <div *ngIf="todoDescription.invalid && (todoDescription.dirty || todoDescription.touched)" class="alert alert-danger">Todo Description is Required</div>
+    
+        <label for="todoCategory">Todo Category</label>
+        <input type="text" formControlName = "todoCategory" id="todoCategory" [(ngModel)] = "todoCategoryDisplay">
+        <div *ngIf="todoCategory.invalid && (todoCategory.dirty || todoCategory.touched)" class="alert alert-danger">Todo Category is Required with at least 5 characters</div>
+    
+        <button type="button" (click)="onSubmit(data.id,todoNameValue,todoDescriptionValue,todoCategoryValue)" id="submitButton">Submit Button</button>
+    </form>
+    </div>
+    
+    <div>
+        <p id="todoNameDisplay">{{ todoNameDisplay }}</p>
+        <p id="todoDescriptionDisplay">{{ todoDescriptionDisplay }}</p>
+        <p id="todoCategoryDisplay">{{ todoCategoryDisplay }}</p>
+    </div>

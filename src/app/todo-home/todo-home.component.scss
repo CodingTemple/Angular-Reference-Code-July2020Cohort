@@ -1,0 +1,63 @@
+section{
+    display: grid;
+    height: 100vh;
+    width: 100vw;
+    grid-template-columns: 2fr 2fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+    "todoName todoNameDisplay"
+    "todoDescription todoDescriptionDisplay"
+    "todoCategory todoCategoryDisplay"
+    "submitButton submitButton";
+}
+
+#todoName{
+    grid-area:todoName;
+    border: 1px solid black;
+    display: block;
+}
+
+#todoDescription{
+    grid-area:todoDescription;
+    border: 1px solid black;
+    display:block;
+}
+
+#todoCategory{
+    grid-area:todoCategory;
+    border: 1px solid black;
+    display: block;
+}
+
+#todoName,#todoDescription,#todoCategory, label,button{
+    margin-left: 30vw;
+}
+
+#todoNameDisplay{
+    grid-area: todoNameDisplay;
+    font-size: 1.3em;
+    margin:5px 0;
+}
+
+#todoDescriptionDisplay{
+    grid-area: todoDescriptionDisplay;
+    font-size: 1.3em;
+    margin:5px 0;
+}
+
+#todoCategoryDisplay{
+    grid-area: todoCategoryDisplay;
+    font-size: 1.3em;
+    margin:5px 0;
+}
+
+.alert{
+    font-size: 1rem;
+    font-weight: 200;
+}
+
+.alert-danger{
+    color: red;
+    margin-left: 30vw;
+    padding: 2px;
+}
